@@ -33,3 +33,4 @@ function convertArrowToRegular(func){
 
     return new Function(argsy, body);
 }
+
