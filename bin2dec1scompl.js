@@ -36,5 +36,5 @@ function bin2decOnes(binArr){
     if(sign === 0)
         return _bin2dec(binArr.slice(1));
 
-    return -1 * _bin2dec(onesComplement(binArr.slice(1)));
+    return -1 * bin2decOnes(onesComplement(binArr));
 }
