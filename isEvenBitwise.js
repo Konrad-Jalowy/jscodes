@@ -1,0 +1,1 @@
+const isEvenBitwise = (num) => ~(num & 1)+2;
