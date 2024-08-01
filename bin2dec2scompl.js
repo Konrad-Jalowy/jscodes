@@ -11,6 +11,11 @@ function bin2dec2s(binArr){
 
     function _bin2dec(binArr){
 
+        let _sign = binArr[0];
+
+        if(_sign === 1)
+            binArr = onesComplement(binArr);
+
         let base = 2;
         let position = 0;
     
@@ -18,7 +23,7 @@ function bin2dec2s(binArr){
     
         let decimalNumber = 0;
     
-        while(binArr.length > 0){
+        while(binArr.length > 1){
     
             let lastDigit = binArr.pop();
     
@@ -29,12 +34,15 @@ function bin2dec2s(binArr){
             position++;
             
         }
-    
-        return decimalNumber;
+
+        if(_sign === 0)
+            return decimalNumber;
+
+        return decimalNumber + 1;
     }
 
     if(sign === 0)
-        return _bin2dec(binArr.slice(1));
+        return _bin2dec(binArr);
 
-    return -1 * bin2dec2s(onesComplement(binArr)) -1;
+    return -1 * _bin2dec(binArr);
 }
