@@ -1,1 +1,4 @@
-const isEvenBitwise = (num) => ~(num & 1)+2;
+function isEvenBitwise(num){
+    num = num & 1;
+    return num ^ 1;
+}
