@@ -1,5 +1,10 @@
 String.prototype.myTrim = function(trimmedChar = " "){
+    
+    if(trimmedChar.length < 1)
+        trimmedChar = " ";
 
+    if(trimmedChar.length > 1)
+        trimmedChar = trimmedChar[0];
 
     let left = 0;
     let right = this.length - 1;
@@ -15,6 +20,9 @@ String.prototype.myTrim = function(trimmedChar = " "){
 
         right--;
     }
-    
+
+    if(left > right)
+        return "";
+
     return this.substring(left, right);
 }
